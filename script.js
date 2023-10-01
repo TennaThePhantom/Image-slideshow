@@ -1,21 +1,4 @@
-/*
-Every that needs to be done in order to complete this project 
-1 - done: arrows need to appear when you hover over container with a transition and makes background a different color
 
-2-2.5 - done: when i hover over a circle it changes from a solid to a different color also --  
-it doesn't make the rest of the circles be different colors only the one that you hover over with mouse
-
-3 - done: when you click on the arrow it will change the image left goes backwards right goes forward
-each image will have a different box shadow color 
-
-4 - done: when you hover over the circles it will show a preview of the image until you click --
-    or stop hovering 
-
-5 after a certain amount of time if the user doesn't hover over the container or circles it will 
-switch to a random image
-*/
-
-//variables(global)
 const boxImage = document.getElementById("box-img");
 const image = document.getElementById("picture");
 const arrows = document.querySelector(".arrows");
@@ -23,7 +6,6 @@ const picture = document.getElementById("picture");
 const circles = document.querySelectorAll(".fa-circle");
 const allCircles = Array.from(circles);
 
-// The current state of image(object)
 const imageState = {
 	currentImage: 0,
 };
@@ -33,12 +15,10 @@ const mouseState = {
 	mouseOnCirlce: false,
 };
 
-//colors
 const colorWheel = (userColor) => {
 	return getComputedStyle(document.documentElement).getPropertyValue(userColor);
 };
 
-//images
 const images = [
 	"Asta.png",
 	"Broly.png",
@@ -49,7 +29,6 @@ const images = [
 	"Jotaro.jpg",
 ];
 
-//body-background
 const gradient_background_direction = "0.25turn";
 const backgroundGradientHover = `linear-gradient(${gradient_background_direction}, ${colorWheel(
 	"--dark-blue"
@@ -59,10 +38,6 @@ const backgroundGradient = `linear-gradient(${gradient_background_direction}, ${
 	"--light-blue"
 )}, ${colorWheel("--light-rose")})`;
 
-//box-image
-const getisMouseOnBoxOrCircle = (isMouseOnBoxOrCircle) => {
-	return isMouseOnBoxOrCircle;
-};
 boxImage.addEventListener("mouseover", () => {
 	arrows.style.opacity = "1";
 	document.body.style.background = backgroundGradientHover;
@@ -313,5 +288,4 @@ circlesHoverEffect();
 arrowChangeImage(images);
 circleImagePreview(images);
 circleImageChange(images);
-
 activeIdleImage();
