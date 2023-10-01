@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--light-blue: rgba(26, 3, 206, 0.6);
+	--light-rose: rgba(242, 92, 245, 0.842);
+	--dark-blue: rgba(26, 3, 206, 1);
+	--rose: rgba(241, 7, 245, 1);
+	--red: rgb(235, 8, 38);
+	--white: rgb(255, 255, 255);
+	--black: rgb(0, 0, 0);
+	--green: rgb(0, 255, 0);
+	--purple: rgb(122, 10, 137);
+	--orange: rgb(255, 165, 0);
+	--navy-blue: rgb(0, 0, 128);
+	--yellow: rgb(255, 255, 0);
+	--floralwhite: rgb(243, 229, 171);
+}
+
+body {
+	height: 100vh;
+	background: linear-gradient(0.25turn, var(--light-blue), var(--light-rose));
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: block;
+	height: 52vh;
+	width: 62.5%;
+	max-width: 600px;
+	background-color: black;
+	border-radius: 5%;
+	box-shadow: 0px 0px 18px 23px var(--red);
+	transition: box-shadow 0.7s ease-in-out;
+}
+.img-size {
+	height: 100%;
+	width: 100%;
+	border-radius: 5%;
+	transition: opacity 0.7s ease-in-out;
+}
+.container .arrows {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 5px;
+	margin-left: 5px;
+	transition: opacity 0.3s ease-in-out; /* Add a transition for smooth appearance */
+	transform: translateY(-14.5em);
+	opacity: 0;
+}
+
+.container .arrows i {
+	color: var(--white);
+	font-size: 4rem;
+	cursor: pointer;
+}
+
+.circles {
+	position: absolute;
+	top: 83.5%;
+	font-size: 1.5rem;
+	width: 62.5%;
+	max-width: 600px;
+	display: flex;
+	justify-content: space-around;
+	transform: translateY(5px);
+}
+
+.circles i:hover {
+	cursor: pointer;
+	transform: translateY(-6px);
+	animation: circlesHover 1.5s ease-in-out infinite;
+}
+
+@keyframes circlesHover {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+/*	Javascript classes	*/
